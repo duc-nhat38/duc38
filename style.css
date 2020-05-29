@@ -1,0 +1,136 @@
+@import url(https://fonts.google.com/specimen/Josefin+Sans);
+:root {
+    --primary-color : hsl(0, 36%, 70%);
+    --second-color :hsl(0, 6%, 24%);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family : "Josefin-Sans", sans-serif;
+    background-image: url('images/bg-pattern-desktop.svg');
+    background-size: cover;
+    background-position: center center;
+    font-family: "Josefin Sans" sans-serif;
+}
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+.container_left {
+    width: 60%;
+    padding: 0 150px;
+}
+.container_right {
+    width: 40%;
+}
+.bg-image {
+    background-image: url('images/hero-desktop.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+.logo {
+    margin: 60px 0;
+    width: 200px;
+}
+h1 {
+  color: var(--second-color);
+  font-size: 60px;
+  text-transform: uppercase;
+  letter-spacing: 25px;
+  animation: leftcomin 0.5s linear forwards;
+  transform: translateX(-100%);
+}
+@keyframes leftcomin {
+    to {
+        transform: translateX(0);
+    }
+}
+h1 span {
+    color: var(--primary-color);
+    font-weight: 200;
+}
+p {
+color:  var(--primary-color);
+letter-spacing: 2px;
+line-height: 25px;
+padding: 30px 0;
+}
+form {
+position: relative;
+animation: leftcomin 0.5s linear forwards;
+  transform: translateX(-100%);
+}
+input {
+border: 1px solid var(--primary-color);
+border-radius: 25px;
+padding: 15px;
+height: 40px;
+width: 100%;
+}
+input:focus {
+    outline: none;
+    
+}
+input::placeholder {
+    color: var(--primary-color);
+}
+button {
+    position: absolute;
+    top :0;
+    right: 0;
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    background-image: linear-gradient(135deg,hsl(0, 80%, 86%),hsl(0, 74%, 74%));
+}
+button:hover {
+    background-image: linear-gradient(135deg,hsl(0, 80%, 86%),hsl(0, 74%, 50%));
+}
+.error {
+    position: absolute;
+    top:10px;
+    right: 110px;
+}
+small {
+    color: hsl(0, 93%, 68%);
+    display: block;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.hero_mobile {
+    display: none;
+}
+
+@media screen and (max-width: 575px) {
+    .container_right {
+        display: none;
+    }
+    .container_left {
+        width: 100%;
+    }
+    .hero_mobile {
+        display: block;
+        margin-left: -40px;
+        margin-right: -40px;
+        width: calc(100% + 130px);
+
+    }
+    .container_main {
+        text-align: center;
+    }
+    .container_main h1 {
+        font-size: 2rem;
+    }
+    .container_main p {
+        font-size: 1rem;
+        
+    }
+    .logo {
+        margin-left: -20px;
+    }
+}
